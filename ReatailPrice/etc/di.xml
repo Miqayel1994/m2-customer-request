@@ -1,0 +1,5 @@
+<config>
+  <type name="Magento\Catalog\Model\Product">
+    <plugin name="am_change_product" type="ArmMage\ReatailPrice\Plugin\Product" sortOrder="1" disabled="false"/>
+  </type>
+</config>
