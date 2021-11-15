@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="CustomerRequestGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">ArmMage\CustomerRequest\Model\ResourceModel\CustomerRequest\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">CustomerRequestGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="CustomerRequestGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">ArmMage\CustomerRequest\Model\ResourceModel\CustomerRequest\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">CustomerRequestGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="CustomerRequestGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customerrequest_customernotification_listing_data_source" xsi:type="string">ArmMage\CustomerRequest\Model\ResourceModel\CustomerRequest\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="ArmMage\CustomerRequest\Model\ResourceModel\CustomerRequest\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">am_customer_request</argument>
+            <argument name="resourceModel" xsi:type="string">ArmMage\CustomerRequest\Model\ResourceModel\CustomerRequest</argument>
+        </arguments>
+    </virtualType>
+
+</config>

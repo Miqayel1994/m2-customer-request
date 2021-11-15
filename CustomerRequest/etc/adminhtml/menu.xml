@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="ArmMage_CustomerRequest::customerrequest" title="ArmMage" translate="title" module="ArmMage_CustomerRequest" sortOrder="50" dependsOnModule="ArmMage_CustomerRequest" resource="ArmMage_CustomerRequest::armmage"/>
+      <add id="ArmMage_CustomerRequest::customerrequest_customernotification" title="Customer Notification" translate="title" module="ArmMage_CustomerRequest" parent="ArmMage_CustomerRequest::customerrequest" sortOrder="10" dependsOnModule="ArmMage_CustomerRequest" action="customerrequest/customernotification" resource="ArmMage_CustomerRequest::customerrequest"/>
+   
+      <!-- <add id="Magento_Catalog::catalog" title="Catalog" translate="title" module="Magento_Catalog" sortOrder="20" dependsOnModule="Magento_Catalog" resource="Magento_Catalog::catalog"/>
+      <add id="Magento_Catalog::catalog_products" title="Products" translate="title" module="Magento_Catalog" sortOrder="10" parent="Magento_Catalog::inventory" action="catalog/product/" resource="Magento_Catalog::products"/>
+       -->
+    </menu>
+</config>
